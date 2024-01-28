@@ -17,7 +17,11 @@ def predict (input_data):
     
     input_as_np = np.array(input_data)
     input_resh = input_as_np.reshape(1,-1)
-    pre = lm.predict(input_resh)
+    pre = lm.predict(input_resh)    
+    if (pre > 50):
+        return "the price is Highest"
+    else:
+        return "the price is lowest"
 
     return(pre)
 
